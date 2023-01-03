@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 import '../../bloc/profile_bloc/profile_bloc.dart';
+import 'keyboard_positioned.dart';
 
 class ReviewModal extends StatefulWidget {
   ReviewModal({Key? key}) : super(key: key);
