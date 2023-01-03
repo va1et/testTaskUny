@@ -4,6 +4,7 @@ import 'package:flutter_application_1/domain/usecases/get_user_reviews.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
 import 'data/datasources/user_reviews_local.dart';
 import 'data/datasources/user_reviews_remote.dart';
 import 'data/repositories/user_repository_impl.dart';
@@ -26,8 +27,15 @@ Future<void> setup() async {
             connectionChecker: getIt(),
             remoteDataSource: getIt(),
           ));
+
+  getIt.registerLazySingleton<UserReviewsLocalData>(
+      () => UserReviewsDataImpl(sharedPreferences: getIt()));
   getIt.registerLazySingleton(
       () => Dio(BaseOptions(connectTimeout: 30000, receiveTimeout: 30000)));
+
+  final sharedPreferences = await SharedPreferences.getInstance();
+
+  getIt.registerLazySingleton(() => sharedPreferences);
   getIt.registerLazySingleton<UserReviewsRemoteData>(
       () => UserReviewsRemoteDataImpl(httpClient: getIt()));
   getIt.registerLazySingleton(() => InternetConnectionChecker());

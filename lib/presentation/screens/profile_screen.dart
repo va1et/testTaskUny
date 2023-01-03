@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bloc/profile_bloc/profile_bloc.dart';
+import '../widgets/profile_reviews_view.dart';
 import '../widgets/review_modal.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -40,17 +43,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
         body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xFF6E3ED3), Color(0xFF1D69DA)],
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xFF6E3ED3), Color(0xFF1D69DA)],
+              ),
             ),
-          ),
-          child: Column(
-            children: [
+            child: Column(children: [
               Stack(children: [
                 Padding(
                   padding: EdgeInsets.only(
@@ -151,7 +153,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               //     color: Colors.grey,
               //   ),
               // ),
-              Card(
+
+              Expanded(
+                  child: Card(
                 child: Padding(
                     padding:
                         const EdgeInsets.only(top: 10, left: 20, right: 20),
@@ -178,11 +182,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               // padding:
                               //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                               shadowColor: Colors.white,
-                              shape: RoundedRectangleBorder(
+                              shape: const RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10))),
                               backgroundColor:
-                                  Color.fromARGB(255, 196, 241, 198),
+                                  const Color.fromARGB(255, 196, 241, 198),
                             ),
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -199,12 +203,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ])),
                         Padding(
                             padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height *
-                                    0.025)),
+                                top:
+                                    MediaQuery.of(context).size.height * 0.01)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Сортировка:",
+                            const Text("Сортировка:",
                                 style: TextStyle(
                                     fontSize: 17,
                                     color: Color.fromARGB(255, 129, 128, 128))),
@@ -219,72 +223,56 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                                 position: PopupMenuPosition.under,
                                 child: TextButton.icon(
-                                  label: Text("самые недавние"),
-                                  icon: Icon(Icons.arrow_downward),
+                                  label: const Text("самые недавние"),
+                                  icon: const Icon(Icons.arrow_downward),
                                   onPressed: () {},
                                 ),
                                 onSelected: (int? value) {},
                                 itemBuilder: (BuildContext context) => [
-                                      PopupMenuItem(
+                                      const PopupMenuItem(
                                         value: 1,
                                         child: Text("сначала новые"),
                                       ),
-                                      PopupMenuItem(
+                                      const PopupMenuItem(
                                         value: 2,
                                         child: Text("сначала старые"),
                                       )
                                     ])
                           ],
-                        )
-
-                        /*BlocBuilder<ProfileBloc, ProfileState>(
+                        ),
+                        BlocBuilder<ProfileBloc, ProfileState>(
                             builder: (context, state) {
-                          if (state is ProfileInitial ||
-                              state is ProfileReviewLoaded) {
-                            Expanded(
-                              child: ListView.separated(
-                                scrollDirection: Axis.horizontal,
-                                physics: const BouncingScrollPhysics(),
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.05),
-                                      child: const ListTile(
-                                        title: Text("Test"),
-                                      ));
-                                  // child: index == 0
-                                  //     ? ReviewCard(
-                                  //         name: "aa",
-                                  //         rating: 5,
-                                  //         reviewtext: "reviewtext",
-                                  //         reviewDay: DateTime.now(),
-                                  //         topreview: Colors.green)
-                                  //     : ReviewCard(
-                                  //         name: "name",
-                                  //         rating: 4,
-                                  //         reviewtext: "reviewtext",
-                                  //         reviewDay: DateTime.now(),
-                                  //         topreview: Colors.grey));
-                                },
-                                itemCount: 3,
-                                separatorBuilder: (context, index) {
-                                  return const SizedBox(
-                                    height: 8,
-                                  );
-                                },
+                          if (state is ProfileLoading) {
+                            return const Center(
+                              child: CircularProgressIndicator(
+                                strokeWidth: 5,
                               ),
                             );
                           }
-                          return Container();
-                        })*/
+                          if (state is ProfileReviewLoaded) {
+                            return ProfileReviewsView(
+                              reviews: state.reviews,
+                            );
+                          }
+
+                          if (state is ProfileLoadError) {
+                            return Column(
+                              children: [
+                                const SizedBox(
+                                  height: 24,
+                                ),
+                                Text(
+                                  state.errorMessage,
+                                )
+                              ],
+                            );
+                          } else {
+                            return Container();
+                          }
+                        })
                       ],
                     )),
-              )
-            ],
-          ),
-        ));
+              ))
+            ])));
   }
 }

@@ -8,8 +8,8 @@ import 'package:flutter_application_1/presentation/widgets/review_modal.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl_standalone.dart';
 import 'package:url_strategy/url_strategy.dart';
+import 'presentation/routes/app_routes.gr.dart';
 import 'service_locator.dart';
-import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,25 +26,20 @@ class App extends StatelessWidget {
       DeviceOrientation.portraitDown,
       DeviceOrientation.portraitUp,
     ]);
-
+    final appRouter = AppRouter();
     return MultiBlocProvider(
       providers: [
         BlocProvider<ProfileBloc>(
             create: (context) => getIt<ProfileBloc>()..add(ProfileOpenEvent())),
       ],
-      child: const MaterialApp(
-        home: ProfileScreen(),
+      child: MaterialApp.router(
+        routerDelegate: appRouter.delegate(
+          navigatorObservers: () => [],
+        ),
+        routeInformationProvider: appRouter.routeInfoProvider(),
+        routeInformationParser: appRouter.defaultRouteParser(),
         debugShowCheckedModeBanner: false,
       ),
-      //     BlocBuilder<ProfileBloc, ProfileState>(builder: (context, state) {
-      //   if (state is ProfileReviewLoaded) {
-      //     return MaterialApp(
-      //       home: const MyHomePage(),
-      //       debugShowCheckedModeBanner: false,
-      //     );
-      //   }
-      //   return const SizedBox.shrink();
-      // }) // const MyHomePage(),
     );
   }
 }

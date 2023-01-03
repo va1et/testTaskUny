@@ -16,10 +16,10 @@ class UserReviewsRemoteDataImpl implements UserReviewsRemoteData {
   Future<DataUserReviewModel> getReviews() async {
     try {
       final response = await httpClient.get(_apiUrl);
-      print(response.statusCode);
+      // print(response.statusCode);
       if (response.statusCode == 200) {
         final data = response.data as Map<String, dynamic>;
-        print(data);
+        //print(data);
         //myLongPrint(json.encode(data));
         return DataUserReviewModel.fromJson(data);
       } else {
