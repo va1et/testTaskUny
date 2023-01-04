@@ -10,11 +10,10 @@
 1. Добавление отзывов,так как отзывы не должны хранится на телефоне,поэтому нужен POST запрос на сервер с добавлением отзыва.
 2. Аналагично с тэгами пользоваетеля.
 # Скриншоты
-![image 53](https://user-images.githubusercontent.com/46132272/210543003-83f3cd24-8a28-466d-a444-09979b61e2d8.png)
-
-![image](https://user-images.githubusercontent.com/46132272/208999170-d573d513-23b1-4985-8991-c434f77669b5.png)
-
-
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/46132272/210543003-83f3cd24-8a28-466d-a444-09979b61e2d8.png" width="300" />
+  <img src="https://user-images.githubusercontent.com/46132272/208999170-d573d513-23b1-4985-8991-c434f77669b5.png" width="300" />
+</p>
 
 # Самостоятельная сборка проекта
 1. Установите стабильную версию Flutter 3.3.1 для своей операционной системы, используя [руководство на странице документации](https://docs.flutter.dev/get-started/install). 
