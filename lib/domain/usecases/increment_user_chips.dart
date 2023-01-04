@@ -5,22 +5,23 @@ import 'package:flutter_application_1/domain/usecases/usecase.dart';
 import '../../common/errors/failures.dart';
 import '../repositories/user_chips_repository.dart';
 
-class SetUserChips extends UseCase<void, SetUserChipsParams> {
+class IncrementUserChips extends UseCase<void, IncrementUserChipsParams> {
   final UserChipsRepository userchipsRepository;
 
-  SetUserChips(this.userchipsRepository);
+  IncrementUserChips(this.userchipsRepository);
 
   @override
-  Future<Either<Failure, void>> call(SetUserChipsParams params) async {
-    return Right(userchipsRepository.setUserChips(params.id, params.amount));
+  Future<Either<Failure, void>> call(IncrementUserChipsParams params) async {
+    return Right(
+        userchipsRepository.incrementUserChip(params.id, params.amount));
   }
 }
 
-class SetUserChipsParams extends Equatable {
+class IncrementUserChipsParams extends Equatable {
   final int id;
   final int amount;
 
-  const SetUserChipsParams(this.id, this.amount);
+  const IncrementUserChipsParams(this.id, this.amount);
 
   @override
   List<Object?> get props => [id, amount];

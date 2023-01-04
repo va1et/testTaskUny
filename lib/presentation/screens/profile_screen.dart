@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/bloc/chips_bloc/chips_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/profile_bloc/profile_bloc.dart';
@@ -14,6 +15,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  int valuesort = 0;
+  List<String> strsort = ["сначала новые", "сначала старые", "по имени"];
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -78,7 +81,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       0.15),
                               child: Padding(
                                 padding: EdgeInsets.only(left: 10),
-                                child: Wrap(
+                                child:
+                                    //  BlocBuilder<ChipsBloc, ChipsState>(
+                                    //     builder: (context, state) {
+                                    //   if (state is ChipsLoaded) {
+                                    //     return
+                                    Wrap(
                                   spacing: 6.0, // gap between adjacent chips
                                   runSpacing: 1.0, // gap between lines
                                   children: <Widget>[
@@ -124,10 +132,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     ),
                                   ],
                                 ),
+                                // }
+                                // return Container();
+                                //}
                               ),
                             ),
                           ),
                         )
+                        //)
                       ]),
                     ),
                     Padding(
@@ -218,32 +230,47 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         fontSize: 17,
                                         color: Color.fromARGB(
                                             255, 129, 128, 128))),
-                                PopupMenuButton(
-                                    shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(8.0),
-                                        bottomRight: Radius.circular(8.0),
-                                        topLeft: Radius.circular(8.0),
-                                        topRight: Radius.circular(8.0),
-                                      ),
-                                    ),
-                                    position: PopupMenuPosition.under,
-                                    child: TextButton.icon(
-                                      label: const Text("самые недавние"),
-                                      icon: const Icon(Icons.arrow_downward),
-                                      onPressed: () {},
-                                    ),
-                                    onSelected: (int? value) {},
-                                    itemBuilder: (BuildContext context) => [
-                                          const PopupMenuItem(
-                                            value: 1,
-                                            child: Text("сначала новые"),
+                                Row(
+                                  children: [
+                                    //   Text(strsort[valuesort]),
+                                    PopupMenuButton(
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(8.0),
+                                            bottomRight: Radius.circular(8.0),
+                                            topLeft: Radius.circular(8.0),
+                                            topRight: Radius.circular(8.0),
                                           ),
-                                          const PopupMenuItem(
-                                            value: 2,
-                                            child: Text("сначала старые"),
-                                          )
-                                        ])
+                                        ),
+                                        position: PopupMenuPosition.under,
+                                        //child: TextButton.icon(
+                                        //label: const Text("самые недавние"),
+                                        icon: const Icon(Icons.arrow_downward),
+                                        // onPressed: () {},
+                                        // ),
+                                        onSelected: (int? value) {
+                                          valuesort = value!;
+
+                                          context
+                                              .read<ProfileBloc>()
+                                              .add(ProfileOpenEvent());
+                                        },
+                                        itemBuilder: (BuildContext context) => [
+                                              PopupMenuItem(
+                                                value: 0,
+                                                child: Text(strsort[0]),
+                                              ),
+                                              PopupMenuItem(
+                                                value: 1,
+                                                child: Text(strsort[1]),
+                                              ),
+                                              PopupMenuItem(
+                                                value: 2,
+                                                child: Text(strsort[2]),
+                                              )
+                                            ])
+                                  ],
+                                )
                               ],
                             ),
                             BlocBuilder<ProfileBloc, ProfileState>(
@@ -258,6 +285,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               if (state is ProfileReviewLoaded) {
                                 return ProfileReviewsView(
                                   reviews: state.reviews,
+                                  sortid: valuesort,
                                 );
                               }
 

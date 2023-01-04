@@ -15,3 +15,11 @@ class ProfileAddReviewEvent extends ProfileEvent {
   @override
   List<Object> get props => [review];
 }
+
+class ProfileIncrementUserChips extends ProfileEvent {
+  final UserChipsData chips;
+  const ProfileIncrementUserChips({required this.chips});
+
+  @override
+  List<Object> get props => [chips];
+}

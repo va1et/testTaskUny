@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/bloc/chips_bloc/chips_bloc.dart';
 import 'package:flutter_application_1/bloc/profile_bloc/profile_bloc.dart';
 import 'package:flutter_application_1/presentation/screens/profile_screen.dart';
 import 'package:flutter_application_1/service_locator.dart'
@@ -31,6 +32,8 @@ class App extends StatelessWidget {
       providers: [
         BlocProvider<ProfileBloc>(
             create: (context) => getIt<ProfileBloc>()..add(ProfileOpenEvent())),
+        BlocProvider<ChipsBloc>(
+            create: (context) => getIt<ChipsBloc>()..add(ChipsOpenEvent())),
       ],
       child: MaterialApp.router(
         routerDelegate: appRouter.delegate(

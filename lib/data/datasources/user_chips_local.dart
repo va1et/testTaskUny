@@ -1,27 +1,27 @@
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-// import '../../common/errors/exceptions.dart';
+import '../../common/errors/exceptions.dart';
+import '../models/chip_model.dart';
 
+abstract class UserChipsLocalData {
+  Future<void> setUserChipsToCache(DataUserChipModel chips);
+  Future<DataUserChipModel> getUserChipsFromCache();
+}
 
-// abstract class UserChipsLocalData {
-//   Future<void> setUserReviewsToCache(DataUserReviewModel reviews);
-//   Future<DataUserReviewModel> getUserReviewsFromCache();
-// }
+class UserChipsDataImpl implements UserChipsLocalData {
+  final SharedPreferences sharedPreferences;
 
-// class UserReviewsDataImpl implements UserReviewsLocalData {
-//   final SharedPreferences sharedPreferences;
+  UserChipsDataImpl({required this.sharedPreferences});
 
-//   UserReviewsDataImpl({required this.sharedPreferences});
+  @override
+  Future<DataUserChipModel> getUserChipsFromCache() async {
+    final jsonChipsList = sharedPreferences.getString('chips');
 
-//   @override
-//   Future<DataUserReviewModel> getUserReviewsFromCache() async {
-//     final jsonReviewList = sharedPreferences.getString('data');
+    throw CacheException('The list of chips is not set');
+  }
 
-//     throw CacheException('The list of review is not set');
-//   }
-
-//   @override
-//   Future<void> setUserReviewsToCache(DataUserReviewModel reviews) {
-//     return sharedPreferences.setString('data', reviews.toRawJson());
-//   }
-// }
+  @override
+  Future<void> setUserChipsToCache(DataUserChipModel chips) {
+    return sharedPreferences.setString('chips', chips.toRawJson());
+  }
+}

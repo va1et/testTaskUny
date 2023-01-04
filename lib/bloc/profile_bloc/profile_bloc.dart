@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import '../../common/errors/failures.dart';
 import '../../domain/models/User_review.dart';
 
+import '../../domain/models/chips.dart';
 import '../../domain/usecases/get_user_reviews.dart';
 import '../../domain/usecases/set_user_reviews.dart';
 

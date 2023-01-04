@@ -4,6 +4,7 @@ import '../../common/errors/failures.dart';
 import '../models/chips.dart';
 
 abstract class UserChipsRepository {
-  Future<Either<Failure, UserChipsData>> getUserListofChips();
-  Future<void> setUserChips(int id, int amount);
+  Future<UserChipsData> getUserListofChips();
+  Future<void> incrementUserChip(int id, int amount);
+  Future<void> addNewUserChip(int id, String name, int amount);
 }
