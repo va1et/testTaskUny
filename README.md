@@ -11,9 +11,8 @@
 2. Аналагично с тэгами пользоваетеля.
 # Скриншоты
 <p float="left">
-
-  <img src="https://https://user-images.githubusercontent.com/46132272/211419551-1bd6f6c6-aada-4a55-bf9f-0a7e35565a6d.png" width="300" />
-  <img src="https://https://user-images.githubusercontent.com/46132272/211419561-d8656e19-0802-4838-80c4-2f9d74afe741.png" width="300" />
+  <img src="https://user-images.githubusercontent.com/46132272/211419733-5b4397e5-0ebf-4b14-953c-3202317a85bd.png" width="300" />
+  <img src="https://user-images.githubusercontent.com/46132272/211419796-1cc623eb-7971-4eb5-9744-12cf0f41038a.png" width="300" />
 </p>
 
 
