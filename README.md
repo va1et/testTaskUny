@@ -12,8 +12,8 @@
 # Скриншоты
 <p float="left">
 
-  <img src="https://user-images.githubusercontent.com/46132272/211379514-b21e79f6-1c70-4d85-b78d-95bcf3dc93b7.png" width="300" />
-  <img src="https://user-images.githubusercontent.com/46132272/211379508-f11ed6e4-7081-45ab-bb8f-e6665b0f9295.png" width="300" />
+  <img src="https://https://user-images.githubusercontent.com/46132272/211419551-1bd6f6c6-aada-4a55-bf9f-0a7e35565a6d.png" width="300" />
+  <img src="https://https://user-images.githubusercontent.com/46132272/211419561-d8656e19-0802-4838-80c4-2f9d74afe741.png" width="300" />
 </p>
 
 
