@@ -49,21 +49,19 @@ class ReviewCard extends StatelessWidget {
                                 text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: name != null ? name! : " ",
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                  ),
-                                ),
+                                    text: name != null ? name! : " ",
+                                    style: TextStyle(
+                                        fontFamily: 'SF Pro Display',
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white)),
                                 const TextSpan(
-                                  text: '  5 ',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 18,
-                                  ),
-                                ),
+                                    text: '  5 ',
+                                    style: TextStyle(
+                                        fontFamily: 'SF Pro Display',
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white)),
                                 WidgetSpan(
                                     alignment: PlaceholderAlignment.baseline,
                                     baseline: TextBaseline.alphabetic,
@@ -74,9 +72,10 @@ class ReviewCard extends StatelessWidget {
                             Text(
                               DateFormat('dd.MM.yyyy').format(reviewDay!),
                               style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
+                                  fontFamily: 'SF Pro Display',
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
                             )
                           ],
                         ),
@@ -88,10 +87,11 @@ class ReviewCard extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * .75,
                           child: Text(
                             reviewtext != null ? reviewtext! : " ",
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                            ),
+                            style: TextStyle(
+                                fontFamily: 'SF Pro Display',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white),
                             maxLines: 8,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -123,19 +123,19 @@ class ReviewCard extends StatelessWidget {
                                 text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: name != null ? name! : " ",
-                                  style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                  ),
-                                ),
+                                    text: name != null ? name! : " ",
+                                    style: const TextStyle(
+                                        fontFamily: 'SF Pro Display',
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey)),
                                 const TextSpan(
                                   text: '  4 ',
                                   style: TextStyle(
                                     color: Color(0xFF29A32E),
                                     fontWeight: FontWeight.w500,
-                                    fontSize: 18,
+                                    fontFamily: 'SF Pro Display',
+                                    fontSize: 17,
                                   ),
                                 ),
                                 WidgetSpan(
@@ -149,7 +149,9 @@ class ReviewCard extends StatelessWidget {
                               DateFormat('dd.MM.yyyy').format(reviewDay!),
                               style: const TextStyle(
                                 color: Colors.black,
-                                fontSize: 16,
+                                fontFamily: 'SF Pro Display',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
                               ),
                             )
                           ],
@@ -162,10 +164,12 @@ class ReviewCard extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * .75,
                           child: Text(
                             reviewtext != null ? reviewtext! : " ",
-                            // style: DarkTextTheme.title.copyWith(
-                            //     color: Theme.of(context).secondaryHeaderColor,
-                            //     fontWeight: FontWeight.w600,
-                            //     fontSize: 15),
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'SF Pro Display',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
                             maxLines: 8,
                             overflow: TextOverflow.ellipsis,
                           ),

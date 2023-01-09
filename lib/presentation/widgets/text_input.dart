@@ -40,33 +40,31 @@ class _TextInputState extends State<TextInput> {
         TextFormField(
           maxLines: 6,
           controller: widget.controller,
-          style: TextStyle(color: Colors.grey),
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontSize: 17,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFF808080)),
           onTap: () {},
           keyboardType: widget.keyboardType,
           obscureText: false,
           decoration: InputDecoration(
-            // contentPadding: const EdgeInsets.symmetric(
-            //   horizontal: 0,
-            //   vertical: 20,
-            // ),
-
             contentPadding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
             hintText: widget.placeholder,
-            hintStyle: TextStyle(color: Color.fromARGB(255, 67, 67, 67)),
+            hintStyle: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+                color: Color(0xFF808080)),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Color(0xFFF0F0F0)),
+                borderRadius: BorderRadius.circular(10.0)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey),
-                borderRadius: BorderRadius.circular(12.0)),
+                borderSide: BorderSide(color: Color(0xFFF0F0F0)),
+                borderRadius: BorderRadius.circular(10.0)),
             filled: false,
-
-            // enabledBorder: UnderlineInputBorder(
-            //   borderSide: BorderSide(color: Theme.of(context).disabledColor),
-            // ),
             border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
-            // border: const UnderlineInputBorder(
-
-            //   borderSide: BorderSide(color: Colors.green),
-            // ),
+                OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           ),
         ),
       ],

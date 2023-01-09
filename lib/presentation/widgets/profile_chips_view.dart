@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class ProfileChipsView extends StatefulWidget {
@@ -12,12 +14,12 @@ class ProfileChipsView extends StatefulWidget {
 
 class _ProfileChipsViewState extends State<ProfileChipsView> {
   double _height = 150;
-  int present = 8;
+  int present = 7;
 
   void onClick() {
     if (_height == 31.0 * widgets.length) {
       setState(() {
-        present = 8;
+        present = 7;
         _height = 150;
       });
     } else {
@@ -29,126 +31,598 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
   }
 
   List<Widget> items = <Widget>[];
-  static const List<Widget> widgets = [
+  static List<Widget> widgets = [
     Chip(
       backgroundColor: Color(0xFF2EA5E9),
-      avatar: Text("💼"),
-      label: Text('Компентентный сотрудник'),
+      avatar: Text(
+        "💼",
+      ),
+      labelPadding: const EdgeInsets.only(left: 1, right: 6),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Компентентный сотрудник  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.white),
+        ), //97D4F4
+        TextSpan(
+          text: ' 85 ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff97D4F4)),
+        )
+      ])),
     ),
     Chip(
       backgroundColor: Color(0xFF0E9E19),
       avatar: Text("😜"),
-      label: Text('Лучший друг'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Лучший друг ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.white),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 29  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff86CF8C)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("😊"),
-      label: Text('Открытый'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Открытый ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 12  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🐈"),
-      label: Text('Зоошиза'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 8  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Ест пиццу с ананасами ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 1  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("😡"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Неадекватный веган ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 2  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          )
+        ]))),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("🎤"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Красиво поёт ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 4  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          ),
+        ]))),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🐈"),
-      label: Text('Зоошиза'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 8  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Ест пиццу с ананасами ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 1  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("😡"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Неадекватный веган ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 2  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          )
+        ]))),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("🎤"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Красиво поёт ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 4  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          ),
+        ]))),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🐈"),
-      label: Text('Зоошиза'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 8  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Ест пиццу с ананасами ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 1  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("😡"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Неадекватный веган ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 2  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          )
+        ]))),
+    Chip(
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("🎤"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Красиво поёт ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 4  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          ),
+        ]))),
+    Chip(
+      backgroundColor: Color(0xFFF0F0F0),
+      avatar: Text("🐈"),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 8  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Ест пиццу с ананасами ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 1  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("😡"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Неадекватный веган ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 2  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          )
+        ]))),
+    Chip(
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("🎤"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Красиво поёт ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 4  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          ),
+        ]))),
+    Chip(
+      backgroundColor: Color(0xFFF0F0F0),
+      avatar: Text("🐈"),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 8  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Ест пиццу с ананасами ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 1  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("😡"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Неадекватный веган ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 2  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          )
+        ]))),
+    Chip(
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("🎤"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Красиво поёт ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+          TextSpan(
+            text: ' 4  ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Color(0xff787878)),
+          ),
+        ]))),
+    Chip(
+      backgroundColor: Color(0xFFF0F0F0),
+      avatar: Text("🐈"),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 8  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Ест пиццу с ананасами ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+        TextSpan(
+          text: ' 1  ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Color(0xff787878)),
+        )
+      ])),
     ),
   ];
   @override
@@ -165,6 +639,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         //   ),
         // ),
         child: Container(
+            width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -173,10 +648,13 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               ),
             ),
             child: Padding(
-                padding: const EdgeInsets.only(top: 0),
+                padding: const EdgeInsets.only(left: 0),
                 child: Column(children: [
                   Wrap(
+                    runAlignment: WrapAlignment.start,
+                    alignment: WrapAlignment.start,
                     spacing: 8,
+                    // runSpacing: 0.1,
                     children: List.generate(present, (index) {
                       return widgets[index];
                     }),
@@ -191,46 +669,66 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                   //       }),
                   // ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: OutlinedButton(
-                        onPressed: () {
-                          onClick();
-                        },
-                        style: OutlinedButton.styleFrom(
-                          // padding:
-                          //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                          shadowColor: Colors.white,
-                          shape: const RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          backgroundColor: Colors.white,
-                        ),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              present == 8
-                                  ? const Text(
-                                      "Показать ещё",
-                                      style: TextStyle(
-                                        fontSize: 17,
-                                        color: Color(0xFFD3D3D3),
-                                      ),
-                                    )
-                                  : const Text("Скрыть",
-                                      style: TextStyle(
-                                        fontSize: 17,
-                                        color: Color(0xFFD3D3D3),
-                                      )),
-                              present == 8
-                                  ? const Icon(
-                                      Icons.arrow_drop_down_sharp,
-                                      color: Color(0xFFC4C4C4),
-                                    )
-                                  : const Icon(
-                                      Icons.arrow_drop_up_sharp,
-                                      color: Color(0xFFC4C4C4),
-                                    )
-                            ])),
+                    padding:
+                        const EdgeInsets.only(top: 10, left: 16, right: 16),
+                    child: ConstrainedBox(
+                        constraints: BoxConstraints.tightFor(
+                            width: MediaQuery.of(context).size.width * 0.92,
+                            height: 38),
+                        child: OutlinedButton(
+                            onPressed: () {
+                              onClick();
+                            },
+                            style: OutlinedButton.styleFrom(
+                              // padding:
+                              //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                              shadowColor: Colors.white,
+                              shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              backgroundColor: Colors.white,
+                            ),
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  present == 7
+                                      ? RichText(
+                                          text: TextSpan(children: [
+                                          const TextSpan(
+                                              text: "Показать ещё ",
+                                              style: TextStyle(
+                                                fontFamily: 'SF Pro Display',
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                                color: Color(0xFFD3D3D3),
+                                              )),
+                                          TextSpan(
+                                              text:
+                                                  '${widgets.length - present}',
+                                              style: const TextStyle(
+                                                fontFamily: 'SF Pro Display',
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w400,
+                                                color: Color(0xFFD3D3D3),
+                                              ))
+                                        ]))
+                                      : const Text("Скрыть",
+                                          style: TextStyle(
+                                            fontFamily: 'SF Pro Display',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xFFD3D3D3),
+                                          )),
+                                  present == 7
+                                      ? const Icon(
+                                          Icons.keyboard_arrow_down_outlined,
+                                          color: Color(0xFFC4C4C4),
+                                        )
+                                      : const Icon(
+                                          Icons.keyboard_arrow_up_outlined,
+                                          color: Color(0xFFC4C4C4),
+                                        )
+                                ]))),
                   )
                 ]))));
   }

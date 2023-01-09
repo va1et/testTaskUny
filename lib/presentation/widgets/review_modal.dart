@@ -17,127 +17,118 @@ class ReviewModal extends StatefulWidget {
 
 class _ReviewModalState extends State<ReviewModal> {
   final TextEditingController _textreview = TextEditingController();
-  double _value = 8;
-  static const List<Widget> widgets = [
+  double _value = 7;
+  static List<Widget> widgets = [
     Chip(
-      backgroundColor: Color(0xFF2EA5E9),
-      avatar: Text("💼"),
-      label: Text('Компентентный сотрудник'),
-    ),
+        backgroundColor: Color(0xFFF0F0F0),
+        avatar: Text("💼"),
+        labelPadding: EdgeInsets.only(left: 1),
+        label: RichText(
+            text: const TextSpan(children: [
+          TextSpan(
+            text: 'Компентентный сотрудник ',
+            style: TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontWeight: FontWeight.w400,
+                fontSize: 16,
+                color: Colors.black),
+          ), //97D4F4     787878
+        ]))),
     Chip(
-      backgroundColor: Color(0xFF0E9E19),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("😜"),
-      label: Text('Лучший друг'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Лучший друг ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("😊"),
-      label: Text('Открытый'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Открытый человек ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
+      backgroundColor: Color(0xFFF0F0F0),
+      avatar: Text("🐓"),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Круто одевается ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+      ])),
+    ),
+    Chip(
+      backgroundColor: Color(0xFFF0F0F0),
+      avatar: Text("😴"),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Много спит ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+      ])),
+    ),
+    Chip(
+      backgroundColor: Color(0xFFF0F0F0),
       avatar: Text("🐈"),
-      label: Text('Зоошиза'),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Зоошиза ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+      ])),
     ),
     Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🐈"),
-      label: Text('Зоошиза'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🐈"),
-      label: Text('Зоошиза'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🤢"),
-      label: Text('Ест пиццу с ананасами '),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("😡"),
-      label: Text('Неадекватный веган'),
-    ),
-    Chip(
-      backgroundColor: Color.fromARGB(255, 197, 197, 197),
-      avatar: Text("🎤"),
-      label: Text('Красиво поёт'),
+      backgroundColor: Color(0xFFF0F0F0),
+      avatar: Text("🎤 "),
+      labelPadding: EdgeInsets.only(left: 1),
+      label: RichText(
+          text: const TextSpan(children: [
+        TextSpan(
+          text: 'Сплетничает ',
+          style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: Colors.black),
+        ), //97D4F4     787878
+      ])),
     ),
   ];
   @override
@@ -163,15 +154,17 @@ class _ReviewModalState extends State<ReviewModal> {
                           horizontal: MediaQuery.of(context).size.width * 0.05),
                       child: Column(children: [
                         Padding(
-                            padding: const EdgeInsets.only(top: 20, right: 10),
+                            padding: const EdgeInsets.only(top: 21, right: 0),
                             child: Stack(
                               children: [
                                 const Align(
                                     alignment: Alignment.center,
                                     child: Text("Оставить отзыв",
                                         style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w600))),
+                                            fontFamily: 'SF Pro Display',
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black))),
                                 Positioned(
                                     left: 0,
                                     child: GestureDetector(
@@ -180,9 +173,10 @@ class _ReviewModalState extends State<ReviewModal> {
                                       },
                                       child: const Text("Отмена",
                                           style: TextStyle(
-                                              color: Colors.red,
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w600)),
+                                              fontFamily: 'SF Pro Display',
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0XFFFE2E47))),
                                     ))
                               ],
                             )),
@@ -203,38 +197,40 @@ class _ReviewModalState extends State<ReviewModal> {
                               child: Text(
                                 "Антон Дегтярёв",
                                 style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.w500),
+                                    fontFamily: 'SF Pro Display',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black),
                               ),
                             )),
                         Padding(
                             padding: EdgeInsets.only(
-                                top:
-                                    MediaQuery.of(context).size.height * 0.005),
+                                top: MediaQuery.of(context).size.height * 0.05),
                             child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text(
-                                    "Оцените ваше общение",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500),
-                                  ),
+                                  const Text("Оцените ваше общение",
+                                      style: TextStyle(
+                                          fontFamily: 'SF Pro Display',
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black)),
                                   RichText(
                                       text: TextSpan(children: [
                                     TextSpan(
                                       text: "${_value.toInt()}",
                                       style: const TextStyle(
-                                          color: Colors.green,
-                                          fontSize: 20,
+                                          color: Color(0Xff0E9E19),
+                                          fontSize: 17,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     const TextSpan(
                                       text: "/10",
                                       style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500),
+                                          color: Color(0XffB3B3B3),
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400),
                                     )
                                   ])),
                                 ])),
@@ -276,11 +272,14 @@ class _ReviewModalState extends State<ReviewModal> {
                             Padding(
                               padding: EdgeInsets.only(
                                   top: MediaQuery.of(context).size.height *
-                                      0.01),
+                                      0.025),
                               child: const Text(
                                 "Короткая характеристика",
                                 style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w500),
+                                    fontFamily: 'SF Pro Display',
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black),
                               ),
                             ),
                           ],
@@ -291,25 +290,22 @@ class _ReviewModalState extends State<ReviewModal> {
                               Padding(
                                   padding: EdgeInsets.only(
                                       top: MediaQuery.of(context).size.height *
-                                          0.01),
+                                          0.015),
                                   child: ConstrainedBox(
                                     constraints: const BoxConstraints.tightFor(
-                                        width: 300, height: 30),
+                                        width: 290, height: 30),
                                     child: ElevatedButton(
                                         onPressed: () {},
                                         style: ElevatedButton.styleFrom(
-                                          // padding:
-                                          //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                                          //shadowColor: Colors.transparent,
+                                            // padding:
+                                            //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                                            //shadowColor: Colors.transparent,
 
-                                          shape: const RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(80))),
-                                          shadowColor: Colors.white,
-                                          backgroundColor:
-                                              Color.fromARGB(255, 229, 208, 247)
-                                                  .withOpacity(1),
-                                        ),
+                                            shape: const RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(80))),
+                                            shadowColor: Colors.white,
+                                            backgroundColor: Color(0xFFF4E7FF)),
                                         child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
@@ -321,23 +317,26 @@ class _ReviewModalState extends State<ReviewModal> {
                                                     .withOpacity(1),
                                               ),
                                               Text(
-                                                "Добавить свою характеристику",
+                                                " Добавить свою характеристику",
                                                 style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: const Color(0xFF910AFB)
-                                                      .withOpacity(1),
-                                                ),
+                                                    fontFamily:
+                                                        'SF Pro Display',
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: const Color(
+                                                        0xFF910AFB)),
                                               ),
                                             ])),
                                   ))
                             ]),
                         Padding(
                             padding: EdgeInsets.only(
-                                top: MediaQuery.of(context).size.height * 0.01),
+                                top:
+                                    MediaQuery.of(context).size.height * 0.015),
                             child: Column(children: [
                               Wrap(
                                 spacing: 8,
-                                children: List.generate(9, (index) {
+                                children: List.generate(7, (index) {
                                   return widgets[index];
                                 }),
                               )
@@ -355,7 +354,7 @@ class _ReviewModalState extends State<ReviewModal> {
                                   // shadowColor: Colors.white,
                                   shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
-                                          Radius.circular(10))),
+                                          Radius.circular(12))),
                                   backgroundColor: const Color(0xFF910AFB),
                                 ),
                                 onPressed: () {
@@ -373,26 +372,38 @@ class _ReviewModalState extends State<ReviewModal> {
                                   child: Text(
                                     "Опубликовать",
                                     style: TextStyle(
-                                        fontSize: 16, color: Colors.white),
+                                        fontFamily: 'SF Pro Display',
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
                                   ),
                                 ),
                               ),
                             )),
                         Padding(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.03),
+                              top: MediaQuery.of(context).size.height * 0.03,
+                              bottom:
+                                  MediaQuery.of(context).size.height * 0.03),
                           child: RichText(
                             text: TextSpan(
                               children: [
                                 const TextSpan(
-                                  text:
-                                      "Нажимая Опубликовать, Вы подтверждаете\n",
-                                  style: TextStyle(color: Colors.black),
-                                ),
+                                    text:
+                                        "Нажимая \"Опубликовать\", вы подтверждаете\n",
+                                    style: TextStyle(
+                                        fontFamily: 'SF Pro Display',
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.black)),
                                 TextSpan(
                                   text:
                                       'согласие с условиями использования Uny',
-                                  style: const TextStyle(color: Colors.blue),
+                                  style: TextStyle(
+                                      fontFamily: 'SF Pro Display',
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xFF299BFF)),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
                                       // launchUrl(Uri.parse(

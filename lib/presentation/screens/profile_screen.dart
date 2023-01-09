@@ -53,13 +53,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 icon: const Icon(Icons.arrow_back_outlined),
                                 onPressed: () {},
                               ),
-                              const Text(
-                                "Рейтинг профиля",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600),
-                              ),
+                              const Text("Рейтинг профиля",
+                                  style: TextStyle(
+                                      fontFamily: 'SF Pro Display',
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white)),
                               IconButton(
                                 color: Colors.white,
                                 icon: const Icon(Icons.share_sharp),
@@ -97,7 +96,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             child: Text(
                               "Антон Дегтярёв",
                               style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.w500),
+                                  fontFamily: 'SF Pro Display',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500),
                             ),
                           )),
                     ]),
@@ -109,111 +110,146 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const ProfileChipsView(),
                   //)
                   //  ),
+                  Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Opacity(
+                        opacity: 1,
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 8,
+                          color: Color(0xFFF2F2F2),
+                        ),
+                      )),
                   Container(
                     color: Colors.white,
                     height: MediaQuery.of(context).size.height * 0.4,
                     child: Padding(
                         padding:
-                            const EdgeInsets.only(top: 10, left: 20, right: 20),
+                            const EdgeInsets.only(top: 10, left: 16, right: 16),
                         child: Column(
                           children: [
                             const Align(
                                 alignment: Alignment.topLeft,
-                                child: Text(
-                                  "Отзывы",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500),
-                                )),
-                            ElevatedButton(
-                                onPressed: () {
-                                  showModalBottomSheet(
-                                    enableDrag: true,
-                                    context: context,
-                                    builder: (context) => ReviewModal(),
-                                    isScrollControlled: true,
-                                    useRootNavigator: true,
-                                    backgroundColor: Colors.transparent,
-                                  );
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  // padding:
-                                  //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-                                  shadowColor: Colors.white,
-                                  shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(10))),
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 196, 241, 198),
-                                ),
-                                child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset("assets/icons/reviewpen.png"),
-                                      Text(
-                                        "Оставить отзыв",
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          color: const Color(0xFF0E9D16)
-                                              .withOpacity(1),
-                                        ),
-                                      ),
-                                    ])),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    top: MediaQuery.of(context).size.height *
-                                        0.01)),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text("Сортировка:",
+                                child: Text("Отзывы",
                                     style: TextStyle(
-                                        fontSize: 17,
-                                        color: Color.fromARGB(
-                                            255, 129, 128, 128))),
-                                Row(
-                                  children: [
-                                    //   Text(strsort[valuesort]),
-                                    PopupMenuButton(
-                                        shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(8.0),
-                                            bottomRight: Radius.circular(8.0),
-                                            topLeft: Radius.circular(8.0),
-                                            topRight: Radius.circular(8.0),
-                                          ),
-                                        ),
-                                        position: PopupMenuPosition.under,
-                                        //child: TextButton.icon(
-                                        //label: const Text("самые недавние"),
-                                        icon: const Icon(Icons.arrow_downward),
-                                        // onPressed: () {},
-                                        // ),
-                                        onSelected: (int? value) {
-                                          valuesort = value!;
-
-                                          context
-                                              .read<ProfileBloc>()
-                                              .add(ProfileOpenEvent());
+                                      fontFamily: 'SF Pro Display',
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF393939),
+                                    ))),
+                            Padding(
+                                padding: EdgeInsets.only(top: 10),
+                                child: ConstrainedBox(
+                                    constraints: BoxConstraints.tightFor(
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.92,
+                                        height: 48),
+                                    child: ElevatedButton(
+                                        onPressed: () {
+                                          showModalBottomSheet(
+                                            enableDrag: true,
+                                            context: context,
+                                            builder: (context) => ReviewModal(),
+                                            isScrollControlled: true,
+                                            useRootNavigator: true,
+                                            backgroundColor: Colors.transparent,
+                                          );
                                         },
-                                        itemBuilder: (BuildContext context) => [
-                                              PopupMenuItem(
-                                                value: 0,
-                                                child: Text(strsort[0]),
+                                        style: ElevatedButton.styleFrom(
+                                          // padding:
+                                          //     EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                                          shadowColor: Colors.white,
+                                          elevation: 0,
+                                          shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(12))),
+                                          backgroundColor: Color(0xFFE7F5E8),
+                                        ),
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Image.asset(
+                                                  "assets/icons/reviewpen.png"),
+                                              const Text("  Оставить отзыв",
+                                                  style: TextStyle(
+                                                    fontFamily:
+                                                        'SF Pro Display',
+                                                    fontSize: 17,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: Color(0xFF0E9D16),
+                                                  )),
+                                            ])))),
+                            Padding(
+                                padding: EdgeInsets.only(top: 10),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    const Text("Сортировка:",
+                                        style: TextStyle(
+                                            fontFamily: 'SF Pro Display',
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color(0XFFBFBFBF))),
+                                    Row(
+                                      children: [
+                                        const Text("Самые недавние",
+                                            style: TextStyle(
+                                                fontFamily: 'SF Pro Display',
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black)),
+                                        PopupMenuButton(
+                                            shape: const RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft:
+                                                    Radius.circular(8.0),
+                                                bottomRight:
+                                                    Radius.circular(8.0),
+                                                topLeft: Radius.circular(8.0),
+                                                topRight: Radius.circular(8.0),
                                               ),
-                                              PopupMenuItem(
-                                                value: 1,
-                                                child: Text(strsort[1]),
-                                              ),
-                                              PopupMenuItem(
-                                                value: 2,
-                                                child: Text(strsort[2]),
-                                              )
-                                            ])
+                                            ),
+                                            position: PopupMenuPosition.under,
+                                            //child: TextButton.icon(
+                                            //label: const Text("самые недавние"),
+                                            icon: const Icon(
+                                              Icons
+                                                  .keyboard_arrow_down_outlined,
+                                              color: Colors.black,
+                                              size: 24,
+                                            ),
+                                            // onPressed: () {},
+                                            // ),
+                                            onSelected: (int? value) {
+                                              valuesort = value!;
+
+                                              context
+                                                  .read<ProfileBloc>()
+                                                  .add(ProfileOpenEvent());
+                                            },
+                                            itemBuilder:
+                                                (BuildContext context) => [
+                                                      PopupMenuItem(
+                                                        value: 0,
+                                                        child: Text(strsort[0]),
+                                                      ),
+                                                      PopupMenuItem(
+                                                        value: 1,
+                                                        child: Text(strsort[1]),
+                                                      ),
+                                                      PopupMenuItem(
+                                                        value: 2,
+                                                        child: Text(strsort[2]),
+                                                      )
+                                                    ])
+                                      ],
+                                    )
                                   ],
-                                )
-                              ],
-                            ),
+                                )),
                             BlocBuilder<ProfileBloc, ProfileState>(
                                 builder: (context, state) {
                               if (state is ProfileLoading) {
