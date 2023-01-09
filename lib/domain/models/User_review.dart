@@ -4,6 +4,7 @@ import 'package:flutter_application_1/domain/models/chips.dart';
 
 class UserReview extends Equatable {
   final int id;
+
   final String text;
   final String name;
   final String createdat;

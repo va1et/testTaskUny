@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/bloc/chips_bloc/chips_bloc.dart';
+import 'package:flutter_application_1/presentation/widgets/profile_chips_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/profile_bloc/profile_bloc.dart';
@@ -27,151 +28,90 @@ class _ProfileScreenState extends State<ProfileScreen> {
     // than having to individually change instances of widgets.
     return Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_outlined),
-            onPressed: () {},
-          ),
-          title: const Text(
-            "Рейтинг профиля",
-            style: TextStyle(color: Colors.white),
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.share),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        body: KeyboardPositioned(
-            child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Color(0xFF6E3ED3), Color(0xFF1D69DA)],
-                  ),
-                ),
-                child: Column(children: [
-                  Stack(children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.2),
-                      child: Column(children: [
-                        Card(
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.zero,
-                                bottomRight: Radius.zero,
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15)),
-                            //<-- SEE HERE
-                          ),
-                          child: SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.4,
-                            width: MediaQuery.of(context).size.width,
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                  top: MediaQuery.of(context).size.height *
-                                      0.15),
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 10),
-                                child:
-                                    //  BlocBuilder<ChipsBloc, ChipsState>(
-                                    //     builder: (context, state) {
-                                    //   if (state is ChipsLoaded) {
-                                    //     return
-                                    Wrap(
-                                  spacing: 6.0, // gap between adjacent chips
-                                  runSpacing: 1.0, // gap between lines
-                                  children: <Widget>[
-                                    const Chip(
-                                      backgroundColor: Color(0xFF2EA5E9),
-                                      avatar: Text("💼"),
-                                      label: Text('Компентентный сотрудник'),
-                                    ),
-                                    const Chip(
-                                      backgroundColor: Color(0xFF0E9E19),
-                                      avatar: Text("😜"),
-                                      label: Text('Лучший друг'),
-                                    ),
-                                    const Chip(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 197, 197, 197),
-                                      avatar: Text("😊"),
-                                      label: Text('Открытый'),
-                                    ),
-                                    const Chip(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 197, 197, 197),
-                                      avatar: Text("🐈"),
-                                      label: Text('Зоошиза'),
-                                    ),
-                                    const Chip(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 197, 197, 197),
-                                      avatar: Text("🤢"),
-                                      label: Text('Ест пиццу с ананасами '),
-                                    ),
-                                    const Chip(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 197, 197, 197),
-                                      avatar: Text("😡"),
-                                      label: Text('Неадекватный веган'),
-                                    ),
-                                    const Chip(
-                                      backgroundColor:
-                                          Color.fromARGB(255, 197, 197, 197),
-                                      avatar: Text("🎤"),
-                                      label: Text('Красиво поёт'),
-                                    ),
-                                  ],
-                                ),
-                                // }
-                                // return Container();
-                                //}
+        body: SafeArea(
+            child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                child:
+                    Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                  Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [Color(0xFF6E3ED3), Color(0xFF1D69DA)],
+                      ),
+                    ),
+                    child: Stack(children: <Widget>[
+                      Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.05),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                color: Colors.white,
+                                icon: const Icon(Icons.arrow_back_outlined),
+                                onPressed: () {},
+                              ),
+                              const Text(
+                                "Рейтинг профиля",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              IconButton(
+                                color: Colors.white,
+                                icon: const Icon(Icons.share_sharp),
+                                onPressed: () {},
+                              ),
+                            ],
+                          )),
+                      Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.20),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.15,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
                               ),
                             ),
-                          ),
-                        )
-                        //)
-                      ]),
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.12),
-                        child: Align(
+                          )),
+                      Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.1),
+                          child: const Align(
                             alignment: Alignment.center,
-                            child: Column(
-                              children: const [
-                                Image(
-                                  image: AssetImage('assets/images/avatar.png'),
-                                ),
-                                Text(
-                                  "Антон Дегтярёв",
-                                  style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
-                            ))),
-                  ]),
-                  // Opacity(
-                  //   opacity: 0.5,
-                  //   child: Container(
-                  //     width: double.infinity,
-                  //     height: 40,
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
-
-                  Expanded(
-                      child: Card(
+                            child: Image(
+                              image: AssetImage('assets/images/avatar.png'),
+                            ),
+                          )),
+                      Padding(
+                          padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.28),
+                          child: const Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Антон Дегтярёв",
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.w500),
+                            ),
+                          )),
+                    ]),
+                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.only(
+                  //       top: MediaQuery.of(context).size.height * 0.05),
+                  //   child:
+                  const ProfileChipsView(),
+                  //)
+                  //  ),
+                  Container(
+                    color: Colors.white,
+                    height: MediaQuery.of(context).size.height * 0.4,
                     child: Padding(
                         padding:
                             const EdgeInsets.only(top: 10, left: 20, right: 20),
@@ -188,6 +128,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ElevatedButton(
                                 onPressed: () {
                                   showModalBottomSheet(
+                                    enableDrag: true,
                                     context: context,
                                     builder: (context) => ReviewModal(),
                                     isScrollControlled: true,
@@ -306,7 +247,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             })
                           ],
                         )),
-                  ))
+                  )
                 ]))));
   }
 }
