@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/bloc/chips_bloc/chips_bloc.dart';
 import 'package:flutter_application_1/presentation/widgets/profile_chips_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../bloc/profile_bloc/profile_bloc.dart';
 import '../widgets/keyboard_positioned.dart';
@@ -60,10 +61,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white)),
                               IconButton(
-                                color: Colors.white,
-                                icon: const Icon(Icons.share_sharp),
-                                onPressed: () {},
-                              ),
+                                  icon: SvgPicture.asset(
+                                      'assets/icons/sharear.svg'),
+                                  color: Colors.white,
+                                  onPressed: () {})
                             ],
                           )),
                       Padding(
