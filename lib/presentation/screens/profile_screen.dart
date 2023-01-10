@@ -81,6 +81,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           )),
                       Padding(
+                          padding: EdgeInsets.only(top: 0),
+                          child: const Align(
+                            alignment: Alignment.center,
+                            child: Image(
+                              image: AssetImage('assets/images/rating.png'),
+                            ),
+                          )),
+                      Padding(
                           padding: EdgeInsets.only(
                               top: MediaQuery.of(context).size.height * 0.1),
                           child: const Align(

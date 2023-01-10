@@ -35,13 +35,13 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     Chip(
       backgroundColor: Color(0xFF2EA5E9),
       avatar: Text(
-        "💼",
+        " 💼",
       ),
-      labelPadding: const EdgeInsets.only(left: 1, right: 6),
+      labelPadding: const EdgeInsets.only(left: 0, right: 0),
       label: RichText(
           text: const TextSpan(children: [
         TextSpan(
-          text: 'Компентентный сотрудник  ',
+          text: 'Компентентный сотрудник ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -49,7 +49,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.white),
         ), //97D4F4
         TextSpan(
-          text: ' 85 ',
+          text: '85  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -60,7 +60,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFF0E9E19),
-      avatar: Text("😜"),
+      avatar: Text(" 😜"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -73,7 +73,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.white),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 29  ',
+          text: '29  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -84,7 +84,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("😊"),
+      avatar: Text(" 😊"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -97,7 +97,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 12  ',
+          text: '12  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -108,7 +108,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🐈"),
+      avatar: Text(" 🐈"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -121,7 +121,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 8  ',
+          text: '8  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -132,7 +132,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🤢"),
+      avatar: Text(" 🤢"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -145,7 +145,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 1  ',
+          text: '1  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -156,7 +156,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("😡"),
+        avatar: Text(" 😡"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -169,7 +169,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 2  ',
+            text: '2  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -179,7 +179,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("🎤"),
+        avatar: Text(" 🎤"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -192,7 +192,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 4  ',
+            text: '4  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -202,7 +202,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🐈"),
+      avatar: Text(" 🐈"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -215,7 +215,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 8  ',
+          text: '8  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -226,7 +226,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🤢"),
+      avatar: Text(" 🤢"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -239,7 +239,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 1  ',
+          text: '1  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -250,7 +250,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("😡"),
+        avatar: Text(" 😡"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -263,7 +263,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 2  ',
+            text: '2  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -273,7 +273,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("🎤"),
+        avatar: Text(" 🎤"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -286,7 +286,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 4  ',
+            text: '4  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -296,7 +296,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🐈"),
+      avatar: Text(" 🐈"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -309,7 +309,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 8  ',
+          text: '8  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -320,7 +320,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🤢"),
+      avatar: Text(" 🤢"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -333,7 +333,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 1  ',
+          text: '1  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -344,7 +344,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("😡"),
+        avatar: Text(" 😡"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -357,7 +357,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 2  ',
+            text: '2  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -367,7 +367,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("🎤"),
+        avatar: Text(" 🎤"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -380,7 +380,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 4  ',
+            text: '4  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -390,7 +390,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🐈"),
+      avatar: Text(" 🐈"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -403,7 +403,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 8  ',
+          text: '8  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -414,7 +414,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🤢"),
+      avatar: Text(" 🤢"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -427,7 +427,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 1  ',
+          text: '1  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -438,7 +438,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("😡"),
+        avatar: Text(" 😡"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -451,7 +451,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 2  ',
+            text: '2  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -461,7 +461,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("🎤"),
+        avatar: Text(" 🎤"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -474,7 +474,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 4  ',
+            text: '4  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -484,7 +484,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🐈"),
+      avatar: Text(" 🐈"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -497,7 +497,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 8  ',
+          text: '8  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -508,7 +508,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🤢"),
+      avatar: Text(" 🤢"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -521,7 +521,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 1  ',
+          text: '1  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -532,7 +532,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("😡"),
+        avatar: Text(" 😡"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -545,7 +545,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 2  ',
+            text: '2  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -555,7 +555,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
         backgroundColor: Color(0xFFF0F0F0),
-        avatar: Text("🎤"),
+        avatar: Text(" 🎤"),
         labelPadding: EdgeInsets.only(left: 1),
         label: RichText(
             text: const TextSpan(children: [
@@ -568,7 +568,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
                 color: Colors.black),
           ), //97D4F4     787878
           TextSpan(
-            text: ' 4  ',
+            text: '4  ',
             style: TextStyle(
                 fontFamily: 'SF Pro Display',
                 fontWeight: FontWeight.w400,
@@ -578,7 +578,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
         ]))),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🐈"),
+      avatar: Text(" 🐈"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -591,7 +591,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 8  ',
+          text: '8  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,
@@ -602,7 +602,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
     ),
     Chip(
       backgroundColor: Color(0xFFF0F0F0),
-      avatar: Text("🤢"),
+      avatar: Text(" 🤢"),
       labelPadding: EdgeInsets.only(left: 1),
       label: RichText(
           text: const TextSpan(children: [
@@ -615,7 +615,7 @@ class _ProfileChipsViewState extends State<ProfileChipsView> {
               color: Colors.black),
         ), //97D4F4     787878
         TextSpan(
-          text: ' 1  ',
+          text: '1  ',
           style: TextStyle(
               fontFamily: 'SF Pro Display',
               fontWeight: FontWeight.w400,

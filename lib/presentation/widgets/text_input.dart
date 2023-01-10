@@ -44,7 +44,7 @@ class _TextInputState extends State<TextInput> {
               fontFamily: 'SF Pro Display',
               fontSize: 17,
               fontWeight: FontWeight.w400,
-              color: Color(0xFF808080)),
+              color: Colors.black),
           onTap: () {},
           keyboardType: widget.keyboardType,
           obscureText: false,

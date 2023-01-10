@@ -33,6 +33,15 @@ class ReviewCard extends StatelessWidget {
                 constraints: BoxConstraints(
                     minHeight: 75,
                     maxWidth: MediaQuery.of(context).size.width * .9),
+                // child: Stack(children: <Widget>[
+                //   Positioned(
+                //       left: 1, child: Image.asset('assets/images/lefttop.png')),
+                //   Positioned(
+                //       right: 1,
+                //       child: Image.asset('assets/images/righttop.png')),
+                //   Padding(
+                //       padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+                //       child:
                 padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +59,7 @@ class ReviewCard extends StatelessWidget {
                               children: [
                                 TextSpan(
                                     text: name != null ? name! : " ",
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontFamily: 'SF Pro Display',
                                         fontSize: 17,
                                         fontWeight: FontWeight.w500,
@@ -87,7 +96,7 @@ class ReviewCard extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * .75,
                           child: Text(
                             reviewtext != null ? reviewtext! : " ",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontFamily: 'SF Pro Display',
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
